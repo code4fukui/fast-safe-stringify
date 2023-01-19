@@ -1,8 +1,3 @@
-module.exports = stringify
-stringify.default = stringify
-stringify.stable = deterministicStringify
-stringify.stableStringify = deterministicStringify
-
 var LIMIT_REPLACE_NODE = '[...]'
 var CIRCULAR_REPLACE_NODE = '[Circular]'
 
@@ -115,7 +110,7 @@ function compareFunction (a, b) {
   return 0
 }
 
-function deterministicStringify (obj, replacer, spacer, options) {
+function _deterministicStringify (obj, replacer, spacer, options) {
   if (typeof options === 'undefined') {
     options = defaultOptions()
   }
@@ -227,3 +222,7 @@ function replaceGetterValues (replacer) {
     return replacer.call(this, key, val)
   }
 }
+
+export default stringify;
+export const deterministicStringify = _deterministicStringify;
+export const stableStringify = _deterministicStringify;

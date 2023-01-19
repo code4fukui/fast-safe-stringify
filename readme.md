@@ -16,7 +16,7 @@ The same as [JSON.stringify][].
 `stringify(value[, replacer[, space[, options]]])`
 
 ```js
-const safeStringify = require('fast-safe-stringify')
+import safeStringify from "https://code4fukui.github.io/fast-safe-stringify/index.js";
 const o = { a: 1 }
 o.o = o
 
@@ -55,7 +55,7 @@ console.log(serialized)
 Using the deterministic version also works the same:
 
 ```js
-const safeStringify = require('fast-safe-stringify')
+import safeStringify from "https://code4fukui.github.io/fast-safe-stringify/index.js";
 const o = { b: 1, a: 0 }
 o.o = o
 
@@ -145,7 +145,7 @@ Shallow or one level nested objects on the other hand will slow down with it.
 It is entirely dependant on the use case.
 
 ```js
-const stringify = require('fast-safe-stringify')
+import safeStringify from "https://code4fukui.github.io/fast-safe-stringify/index.js";
 
 function tryJSONStringify (obj) {
   try { return JSON.stringify(obj) } catch (_) {}
