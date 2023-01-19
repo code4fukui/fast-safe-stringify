@@ -56,12 +56,13 @@ Using the deterministic version also works the same:
 
 ```js
 import safeStringify from "https://code4fukui.github.io/fast-safe-stringify/index.js";
+import { stableStringify } from "https://code4fukui.github.io/fast-safe-stringify/index.js";
 const o = { b: 1, a: 0 }
 o.o = o
 
 console.log(safeStringify(o))
 // '{"b":1,"a":0,"o":"[Circular]"}'
-console.log(safeStringify.stableStringify(o))
+console.log(stableStringify(o))
 // '{"a":0,"b":1,"o":"[Circular]"}'
 console.log(JSON.stringify(o))
 // TypeError: Converting circular structure to JSON
